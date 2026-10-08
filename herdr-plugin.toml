@@ -1,0 +1,15 @@
+id = "local.quota-sidebar"
+name = "Quota in Agents"
+version = "0.1.0"
+description = "Show the agent quota lines inside the Agents sidebar"
+platforms = ["macos"]
+min_herdr_version = "0.9.0"
+
+[[startup]]
+command = ["python3", "quota.py", "--resume"]
+
+[[actions]]
+id = "toggle"
+title = "Toggle agent usage in the sidebar"
+contexts = ["workspace"]
+command = ["python3", "quota.py", "--toggle"]
