@@ -2,7 +2,7 @@
 
 <img width="625" height="188" alt="image" src="https://github.com/user-attachments/assets/b1940d9f-41b2-4874-84f9-5f618de3d214" />
 
-Account quota lines on the last Agents-sidebar card. Herdr 0.9 has no free-standing block under the agents header, so the lines are pane metadata. Every other card stays clear. Hairlines use the same `─` rule as the Spaces and Agents sections.
+Account quota lines. Herdr 0.9 has no free-standing block under the agents header, so the lines are pane metadata. Every other card stays clear. Hairlines use the same `─` rule as the Spaces and Agents sections.
 
 The numbers come from [kwanwooi25/herdr-plugin-agent-quota](https://github.com/kwanwooi25/herdr-plugin-agent-quota) (`node index.js --limits`). Claude Code, Codex, and Grok are covered. Install that plugin first.
 
