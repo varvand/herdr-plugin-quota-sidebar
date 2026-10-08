@@ -1,5 +1,7 @@
 # Quota in the Agents sidebar
 
+![Quota lines on the last agent card](docs/quota.png)
+
 Account quota lines on the last Agents-sidebar card. Herdr 0.9 has no free-standing block under the agents header, so the lines are pane metadata. Every other card stays clear. Hairlines use the same `─` rule as the Spaces and Agents sections.
 
 The numbers come from [kwanwooi25/herdr-plugin-agent-quota](https://github.com/kwanwooi25/herdr-plugin-agent-quota) (`node index.js --limits`). Claude Code, Codex, and Grok are covered. Install that plugin first.
@@ -30,4 +32,18 @@ command = "local.quota-sidebar.toggle"
 description = "toggle agent usage in the sidebar"
 ```
 
-The card needs tokens `$qtop`, `$q0`, `$qbot`, and `$q1_ok` through `$q6_bad` (variants `ok`, `warn`, `bad`, `na`). Empty tokens disappear. The worker refreshes about every 45 seconds and removes the lines on toggle-off.
+The card needs `$qtop`, `$q0`, `$qbot`, and `$q1` through `$q6` with variants `ok`, `warn`, `bad`, and `na`. Empty tokens disappear. Put the four variants of a slot on one row. Herdr allows 16 sidebar rows, and a row per variant does not fit. The worker refreshes about every 45 seconds and removes the lines on toggle-off.
+
+```toml
+[{ token = "$qtop", fg = "#3b4261" }],
+[{ token = "$q0", fg = "#565f89" }],
+[
+  { token = "$q1_ok", fg = "#9ece6a" },
+  { token = "$q1_warn", fg = "#e0af68" },
+  { token = "$q1_bad", fg = "#f7768e" },
+  { token = "$q1_na", fg = "#565f89" },
+],
+[{ token = "$qbot", fg = "#3b4261" }],
+```
+
+Repeat the slot row for `$q2` through `$q6`. `$qbot` uses the same color as `$qtop`.
