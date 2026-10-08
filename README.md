@@ -1,4 +1,4 @@
-# Quota in the Agents sidebar
+# Quota
 
 <img width="625" height="188" alt="image" src="https://github.com/user-attachments/assets/b1940d9f-41b2-4874-84f9-5f618de3d214" />
 
